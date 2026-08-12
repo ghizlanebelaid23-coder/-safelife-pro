@@ -64,7 +64,7 @@ Auto-detects critical values and triggers a countdown alert. Once the countdown 
 ![SOS Alert](screenshots/sos.png)
 ![WhatsApp emergency message](screenshots/whatsapp-alert.png)
 
-![SOS Alert](screenshots/sos.png)
+
 
 ### 👤 Medical Profile
 Blood group, diabetes type, medications, emergency contact.
