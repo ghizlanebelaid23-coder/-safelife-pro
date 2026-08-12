@@ -806,7 +806,7 @@ Be concise, professional. Always recommend consulting a doctor for serious conce
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "llama3-8b-8192",
+       model: "openai/gpt-oss-20b",
         messages: [
           { role: "system", content: buildContext() },
           ...messages.slice(-6).map(m => ({
