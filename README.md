@@ -4,42 +4,39 @@
 
 **Live demo:** https://safelife-pro-4ygl.vercel.app/
 
-## 🩺 Le projet
+## 🩺 The Project
 
-SafeLife Pro est né lors du hackathon **MIATHON 2026**, en réponse à un problème de santé publique concret au Maroc :
+SafeLife Pro was born during the **MIATHON 2026** hackathon, in response to a real public health problem in Morocco:
 
-- **2,7 millions de Marocains** vivent avec le diabète, dont environ 50% non diagnostiqués.
-- **38% des décès** au Maroc sont causés par des maladies cardiovasculaires — 1ère cause de mortalité.
-- Les solutions existantes (Apple Watch, FreeStyle Libre) coûtent entre 700 et 7 000 DH, hors de portée de la majorité des ménages marocains.
+- **2.7 million Moroccans** live with diabetes, roughly 50% of them undiagnosed.
+- **38% of deaths** in Morocco are caused by cardiovascular disease — the country's leading cause of mortality.
+- Existing solutions (Apple Watch, FreeStyle Libre) cost between 700 and 7,000 DH, out of reach for most Moroccan households.
 
-**Problématique :** comment prévenir un accident grave — voire mortel — quand une personne perd soudainement conscience (diabète, arrêt cardiaque, malaise), qu'elle soit seule chez elle, dans la rue ou au volant, sans que personne ne soit alerté à temps ?
+**Problem statement:** how do you prevent a serious — potentially fatal — accident when someone suddenly loses consciousness (diabetes, cardiac arrest, fainting), whether they're alone at home, on the street, or driving, with no one around to raise the alarm in time?
 
-### La solution : un système à trois couches
+### The solution: a three-layer system
 
-| Couche | Rôle |
+| Layer | Role |
 |---|---|
-| 🩹 **Patch glycémie** | Mesure continue du glucose, jusqu'à 14 jours d'autonomie, transmission BLE en temps réel |
-| ⌚ **Bracelet connecté** | Rythme cardiaque, oxygène sanguin (SpO2), géolocalisation GPS, alertes vibration |
-| 📱 **Application mobile (ce dépôt)** | Reçoit les données des appareils, les analyse via IA, déclenche les alertes vers proches/médecin/secours |
+| 🩹 **Glucose patch** | Continuous glucose monitoring, up to 14 days of battery life, real-time BLE transmission |
+| ⌚ **Connected wristband** | Heart rate, blood oxygen (SpO2), built-in GPS, vibration alerts |
+| 📱 **Mobile app (this repo)** | Receives device data, analyzes it via AI, triggers alerts to family/doctor/emergency services |
 
-**Ce dépôt contient la couche application** : elle se connecte aux appareils via Bluetooth Low Energy (BLE), stocke l'historique sur Firebase, et utilise un modèle IA (Groq) pour l'analyse et les alertes prédictives. Le patch et le bracelet sont le matériel physique du projet (prototype hackathon, ~700 DH), non inclus dans ce repo logiciel.
-
----
-
-## 📡 Connexion aux appareils (Bluetooth BLE)
-
-L'app se connecte aux capteurs (bracelet, patch) via l'[API Web Bluetooth](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API), directement depuis le navigateur, sans application native.
-
-- Menu → **Bluetooth Devices** → **Connect Device** ouvre le sélecteur natif du navigateur.
-- Services GATT supportés : `heart_rate`, `glucose`, `battery_service`, `device_information`.
-- Une fois connecté, les données réelles remplacent les valeurs simulées affichées par défaut.
-
-**Support navigateur :** Chrome, Edge et Opera (desktop/Android) uniquement — Web Bluetooth n'est pas supporté sur Safari ni Firefox (limitation du navigateur, pas un bug de l'app).
-
-> Aucun appareil physique n'est nécessaire pour tester l'app : le dashboard affiche des biométriques simulées réalistes par défaut, pour que chaque fonctionnalité (y compris l'assistant IA) reste testable sans matériel.
+**This repository contains the application layer**: it connects to devices over Bluetooth Low Energy (BLE), stores history in Firebase, and uses an AI model (Groq) for analysis and predictive alerts. The patch and wristband are the project's physical hardware (hackathon prototype, ~700 DH), not included in this software repo.
 
 ---
 
+## 📡 Device Connectivity (Bluetooth BLE)
+
+The app connects to sensors (wristband, patch) via the [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API), directly from the browser, with no native app required.
+
+- Menu → **Bluetooth Devices** → **Connect Device** opens the browser's native device picker.
+- Supported GATT services: `heart_rate`, `glucose`, `battery_service`, `device_information`.
+- Once connected, real sensor data replaces the simulated values shown by default.
+
+**Browser support:** Chrome, Edge, and Opera only (desktop/Android) — Web Bluetooth is not supported in Safari or Firefox (a browser limitation, not an app bug).
+
+> No physical device is required to try the app: the dashboard shows realistic simulated biometrics by default, so every feature (including the AI assistant) can be tested without hardware.
 ## ✨ Features
 
 ### 🔐 Authentication
