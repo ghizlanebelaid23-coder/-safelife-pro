@@ -45,35 +45,36 @@ L'app se connecte aux capteurs (bracelet, patch) via l'[API Web Bluetooth](https
 ### 🔐 Authentication
 Firebase Auth — register / login / logout.
 
-![Login](screenshots/login.png)
+![Login](screenshots/login.jpeg)
+
 
 ### 📊 Live Biometric Dashboard
 Heart rate, glucose, SpO2, blood pressure — updated in real time.
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/dashboard.jpeg)
 
 ### 🤖 AI Medical Assistant
 Groq (`openai/gpt-oss-20b`) analyzes your real biometric data and answers health questions.
 
-![AI Assistant](screenshots/ai-chat.png)
+![AI Assistant](screenshots/ai-chat.jpeg)
 
 ### 🚨 Emergency SOS
 Auto-detects critical values and triggers a countdown alert. Once the countdown ends, the app automatically opens WhatsApp with a pre-filled message containing the patient's vitals and GPS location, sent to the configured emergency contact.
 
-![SOS Alert](screenshots/sos.png)
+![SOS Alert](screenshots/sos.jpeg)
 ![WhatsApp emergency message](screenshots/whatsapp-alert.png)
 
-![SOS Alert](screenshots/sos.png)
+![SOS Alert](screenshots/sos.jpeg)
 
 ### 👤 Medical Profile
 Blood group, diabetes type, medications, emergency contact.
 
-![Medical Profile](screenshots/profile.png)
+![Medical Profile](screenshots/profile.jpeg)
 
 ### 📈 Health History
 Timeline of past readings saved to Firestore.
 
-![Health History](screenshots/history.png)
+![Health History](screenshots/history.jpeg)
 
 ---
 
