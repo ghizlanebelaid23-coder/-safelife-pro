@@ -1,7 +1,0 @@
-node_modules
-build
-.env
-.env.local
-.git
-.vercel
-npm-debug.log*

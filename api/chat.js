@@ -1,10 +1,4 @@
-// Vercel Serverless Function — proxies chat requests to Groq (Llama 3).
-// NOTE: this project's UI/README used to say "Gemini" — that was never true.
-// The code has always called Groq's API (api.groq.com) with model
-// "llama3-8b-8192". The key you set (GROQ_API_KEY) must be a real Groq key
-// (starts with "gsk_"), NOT a Google Gemini key (starts with "AIzaSy") —
-// they are two different providers with incompatible keys. That mismatch
-// is exactly why the assistant was failing.
+
 
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -17,9 +11,7 @@ export default async function handler(req, res) {
 
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
-    // This is the #1 cause of "AI indisponible": the key was never set
-    // in the deployment environment (Vercel dashboard), only in a local
-    // .env file that is gitignored and never reaches production.
+    
     return res.status(500).json({
       error: "Missing GROQ_API_KEY. Set it in your deployment's environment variables."
     });
@@ -37,9 +29,7 @@ export default async function handler(req, res) {
 
     const data = await upstream.json();
 
-    // Forward the real upstream status instead of always returning 200.
-    // Without this, a 401 (bad key) or 429 (rate limit) from Groq gets
-    // silently swallowed and the frontend just shows a generic error.
+    
     if (!upstream.ok) {
       return res.status(upstream.status).json({
         error: data?.error?.message || "Upstream AI provider error",
