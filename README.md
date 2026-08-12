@@ -6,7 +6,7 @@
 
 ## 🩺 Le projet
 
-SafeLife Pro est né lors du hackathon **MIATHON 2025**, en réponse à un problème de santé publique concret au Maroc :
+SafeLife Pro est né lors du hackathon **MIATHON 2026**, en réponse à un problème de santé publique concret au Maroc :
 
 - **2,7 millions de Marocains** vivent avec le diabète, dont environ 50% non diagnostiqués.
 - **38% des décès** au Maroc sont causés par des maladies cardiovasculaires — 1ère cause de mortalité.
